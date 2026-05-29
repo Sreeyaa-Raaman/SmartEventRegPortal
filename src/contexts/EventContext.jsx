@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import { createContext, useContext, useState, useEffect } from 'react';
 
 const EventContext = createContext();
@@ -33,7 +34,7 @@ const initialEvents = [
 ];
 
 export function EventProvider({ children }) {
-  const [events, setEvents] = useState(() => {
+  const [events] = useState(() => {
     const saved = localStorage.getItem('events');
     if (saved) {
       const parsed = JSON.parse(saved);
